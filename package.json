@@ -1,0 +1,15 @@
+{
+  "name": "bunny-studio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.com:gearsis/gearph-new.git",
+  "author": "Juan Roa",
+  "private": false,
+  "scripts": {
+    "bootstrap": "yarn install && yarn lerna bootstrap",
+    "regenerate": "lerna clean && rm -rf ./node_modules && yarn run bootstrap"
+  },
+  "devDependencies": {
+    "lerna": "^3.13.3"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "lerna": "3.13.3",
+  "packages": [
+    "packages/*"
+  ],
+  "npmClient": "yarn",
+  "npmClientArgs": [
+    "--ignore-engines"
+  ],
+  "nohoist": true,
+  "version": "independent",
+  "commands": {
+    "bootstrap": {
+      "ignore": "_bunny-studio-*"
+    }
+  }
+}
