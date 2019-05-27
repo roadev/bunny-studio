@@ -1,10 +1,9 @@
 import React from 'react';
+import Routes from "./Routes";
 
 const App: React.FC = (): JSX.Element => {
 	return (
-		<div>
-			<h3>Hi Bunny Studio!</h3>
-		</div>
+		<Routes />
 	);
 };
 

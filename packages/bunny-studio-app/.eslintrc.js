@@ -15,8 +15,11 @@ module.exports =  {
   rules:  {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
-    "indent": "off",
-    "@typescript-eslint/indent": ["error", "tab"]
+    'indent': 'off',
+    '@typescript-eslint/indent': ["error", "tab"],
+    'object-curly-spacing': ["error", "always", { "objectsInObjects": false }],
+    quotes: ['error', 'single'],
+    'key-spacing': ["error", { "beforeColon": false }]
   },
   settings:  {
     react:  {

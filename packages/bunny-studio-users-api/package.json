@@ -1,0 +1,8 @@
+{
+  "name": "bunny-studio-users-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Juan Roa",
+  "license": "MIT",
+  "private": false
+}
