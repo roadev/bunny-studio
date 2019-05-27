@@ -4,8 +4,8 @@ import { Button } from 'primereact/button';
 import { History } from 'history';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { Growl } from 'primereact/growl';
-import { State } from '../UsersList/interfaces';
-import { deleteUser } from '../../../services/users';
+import { State } from '../TasksList/interfaces';
+import { deleteTask } from '../../../services/tasks';
 
 interface Props {
 	id: number;
@@ -13,15 +13,15 @@ interface Props {
 	history: History;
 }
 
-class User extends Component<Props & RouteComponentProps, State> {
+class Task extends Component<Props & RouteComponentProps, State> {
 	public growl = null;
 
 	public handleDelete = () => {
-		deleteUser(this.props.id).then(() => {
+		deleteTask(this.props.id).then(() => {
 			this.growl.show({
 				severity: 'success',
-				summary: 'User deleted!',
-				detail: 'User has been deleted',
+				summary: 'Task deleted!',
+				detail: 'Task has been deleted',
 			});
 		});
 	};
@@ -32,21 +32,7 @@ class User extends Component<Props & RouteComponentProps, State> {
 			<Fragment>
 				<Growl ref={(el) => this.growl = el} />
 				<Card title={name}>
-					<Button
-						icon="pi pi-list"
-						style={{ marginRight: '1rem' }}
-						onClick={
-							() => history.push(
-								{
-									pathname: `/users/${id}/tasks`,
-									state: {
-										name
-									}
-								}
-
-							)
-						}
-					/>
+					{/*<Button icon="pi pi-list" style={{ marginRight: '1rem' }} onClick={() => history.push(`/users/${id}/tasks`)}/>*/}
 					<Button icon="pi pi-pencil" className="p-button-warning" style={{ marginRight: '1rem' }} />
 					<Button icon="pi pi-trash" className="p-button-danger" onClick={this.handleDelete} />
 				</Card>
@@ -55,4 +41,4 @@ class User extends Component<Props & RouteComponentProps, State> {
 	}
 }
 
-export default withRouter(User);
+export default withRouter(Task);

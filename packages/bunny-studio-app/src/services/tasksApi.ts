@@ -1,28 +1,26 @@
 import { create } from 'apisauce';
 
-const api = create({
-	baseURL: 'http://localhost:5000/api/v1',
+const tasksApi = create({
+	baseURL: 'http://localhost:5001/api/v1',
 	headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
 });
 
 export const getRequest = async (endpoint: string): Promise<any> => {
-	const { data } = await api.get(endpoint);
+	const { data } = await tasksApi.get(endpoint);
 	return data;
 };
 
 export const postRequest = async (endpoint: string, payload: any): Promise<any> => {
-	const { data } = await api.post(endpoint, { ...payload });
+	const { data } = await tasksApi.post(endpoint, { ...payload });
 	return data;
 };
 
 export const patchRequest = async (endpoint: string, payload: any): Promise<any> => {
-	const { data } = await api.patch(endpoint, { ...payload });
+	const { data } = await tasksApi.patch(endpoint, { ...payload });
 	return data;
 };
 
 export const deleteRequest = async (endpoint: string): Promise<any> => {
-	const { data } = await api.delete(endpoint);
+	const { data } = await tasksApi.delete(endpoint);
 	return data;
 };
-
-export default api;

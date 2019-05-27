@@ -37,11 +37,14 @@ export async function createTask(
  * @author Juan Roa
  */
 export async function getTasks(
-	request: Request,
+	{ query }: Request,
 	response: Response,
 ) {
 
-	const observable = from(Task.find());
+	const queryParams = query.user_id ? { user_id: query.user_id } : {};
+	console.log('queryParams', queryParams);
+
+	const observable = from(Task.find({ ...queryParams }));
 	observable.subscribe(
 		(tasks) => {
 			response.send(tasks);

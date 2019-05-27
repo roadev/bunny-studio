@@ -21,7 +21,8 @@ const items = (history: History): Items[] => [
 	},
 	{
 		label: 'Tasks',
-		icon: 'pi pi-fw pi-check'
+		icon: 'pi pi-fw pi-check',
+		command: (): void => history.push('/tasks')
 	}
 ];
 

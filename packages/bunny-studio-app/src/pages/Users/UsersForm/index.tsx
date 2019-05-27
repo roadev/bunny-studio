@@ -23,7 +23,7 @@ class UsersForm extends Component {
 	};
 
 	public handleSubmit = (): void => {
-		createUser('/users', { name: this.state.name }).then(user => {
+		createUser( { name: this.state.name }).then(user => {
 			console.log(user);
 			this.growl.show({
 				severity: 'success',

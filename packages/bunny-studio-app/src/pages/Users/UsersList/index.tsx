@@ -24,7 +24,7 @@ class UsersList extends Component<{}, State> {
 		return (
 			<section className="p-grid p-justify-center" style={{ marginTop: '2rem' }}>
 				<div className="p-col-6">
-					<ScrollPanel style={{  height: '500px' }} className="">
+					<ScrollPanel style={{  height: '350px' }} className="">
 						{users.map(u => (
 							<User key={u.id} name={u.name} id={u.id} />
 						))}
