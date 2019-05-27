@@ -7,12 +7,12 @@ import errorhandler from 'strong-error-handler';
 import { connect } from 'mongoose';
 import routes from './routes';
 const MONGODB_URI =
-	process.env.MONGODB_URI || 'mongodb://localhost/bunnyStudioUsersDB';
+	process.env.MONGODB_URI || 'mongodb://localhost/bunnyStudioTasksDB';
 	connect(
 		MONGODB_URI,
-		{
+			{
 				useNewUrlParser: true,
-				useCreateIndex: true
+				useCreateIndex: true,
 			}
 		).then(() => {
 			const app = express();

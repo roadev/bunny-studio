@@ -3,18 +3,20 @@ import React, { useEffect, useState } from 'react';
 import { ListBox } from 'primereact/listbox';
 import { withRouter } from 'react-router-dom';
 import { History } from 'history';
-
-const usersData = [
-	{ label: 'Juan', value: '1' },
-	{ label: 'Geraldine', value: '2' },
-	{ label: 'Julian', value: '3' },
-	{ label: 'Maya', value: '4' },
-	{ label: 'Jorge', value: '5' },
-];
+import { getUsers } from '../../../services/users';
+import { User } from './interfaces';
 
 const UsersList = ({ history }: { history: History }): JSX.Element => {
 	const [user, setUser] = useState('');
-	const [users, setUsers] = useState(usersData);
+	const [users, setUsers] = useState([]);
+	
+	useEffect((): void => {
+		if (users.length === 0) {
+			getUsers().then((usersData: User[]) => {
+				setUsers(usersData.map(u => ({ label: u.name, value: u.id, key: u.id })));
+			});
+		}
+	}, [users]);
 
 	useEffect((): void => {
 		if (user !== '') {

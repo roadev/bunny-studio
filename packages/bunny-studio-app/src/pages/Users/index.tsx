@@ -3,10 +3,10 @@ import UsersList from "./UsersList";
 import UsersForm from './UsersForm';
 
 const Users = (): JSX.Element => (
-	<div>
+	<section style={{ marginTop: '2rem' }}>
 		<UsersList />
 		<UsersForm />
-	</div>
+	</section>
 );
 
 export default Users;

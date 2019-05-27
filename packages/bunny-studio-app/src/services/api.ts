@@ -10,4 +10,9 @@ export const getRequest = async (endpoint: string): Promise<any> => {
 	return data;
 };
 
+export const postRequest = async (endpoint: string, payload: any): Promise<any> => {
+	const { data } = await api.post(endpoint, { ...payload });
+	return data;
+};
+
 export default api;
