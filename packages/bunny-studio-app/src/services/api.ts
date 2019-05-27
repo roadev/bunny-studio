@@ -15,4 +15,14 @@ export const postRequest = async (endpoint: string, payload: any): Promise<any> 
 	return data;
 };
 
+export const patchRequest = async (endpoint: string, payload: any): Promise<any> => {
+	const { data } = await api.patch(endpoint, { ...payload });
+	return data;
+};
+
+export const deleteRequest = async (endpoint: string): Promise<any> => {
+	const { data } = await api.delete(endpoint);
+	return data;
+};
+
 export default api;

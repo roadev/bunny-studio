@@ -11,6 +11,7 @@ export default function Routes(): JSX.Element {
 			<Layout>
 				<Route exact path="/" component={Home} />
 				<Route exact path="/users" component={Users} />
+				{/*<Route exact path="/users/:id/tasks" component={UserDetails} />*/}
 				<Route component={NotFound} />
 			</Layout>
 		</Router>

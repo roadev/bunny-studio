@@ -35,6 +35,6 @@ const MONGODB_URI =
 					},
 				);
 			});
-			app.listen(process.env.APP_PORT || 5000);
+			app.listen(process.env.APP_PORT || 5001);
 		});
 

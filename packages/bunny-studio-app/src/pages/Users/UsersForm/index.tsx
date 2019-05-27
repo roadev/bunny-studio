@@ -3,7 +3,7 @@ import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Growl } from 'primereact/growl';
 // import { useService } from '../../../components/utils/useService';
-import { postRequest } from '../../../services/api';
+import { createUser } from '../../../services/users';
 import { placeholder } from '@babel/types';
 
 interface State {
@@ -23,7 +23,7 @@ class UsersForm extends Component {
 	};
 
 	public handleSubmit = (): void => {
-		postRequest('/users', { name: this.state.name }).then(user => {
+		createUser('/users', { name: this.state.name }).then(user => {
 			console.log(user);
 			this.growl.show({
 				severity: 'success',
@@ -37,7 +37,7 @@ class UsersForm extends Component {
 		return (
 			<Fragment>
 				<Growl ref={(el) => this.growl = el} />
-				<div className="p-inputgroup p-grid p-justify-center" style={{ marginTop: '2rem' }}>
+				<div className="p-inputgroup p-grid p-justify-center" style={{ marginTop: '3rem' }}>
 					<span className="p-inputgroup-addon">
 						<i className="pi pi-user"></i>
 					</span>
@@ -50,7 +50,6 @@ class UsersForm extends Component {
 					<Button label="Create user" onClick={this.handleSubmit} />
 				</div>
 			</Fragment>
-			
 		);
 	}
 

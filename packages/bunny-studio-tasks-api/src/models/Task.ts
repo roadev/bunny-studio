@@ -1,13 +1,15 @@
 import moongose, { Schema, model } from 'mongoose';
-// const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/bunnyStudioUsersDB';
-// const connection = createConnection(MONGODB_URI);
 const AutoIncrement = require('mongoose-sequence')(moongose);
 
 const TaskSchema = new Schema({
   id: {
     type: Number,
   },
-  name: {
+  description: {
+    type: String,
+    required: true
+  },
+  state: {
     type: String,
     required: true
   },
