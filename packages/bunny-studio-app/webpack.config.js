@@ -14,6 +14,7 @@ module.exports = {
 	},
 	module: {
 		rules: [
+			{ test: /\.tsx?$/, exclude: /\.test.tsx?$/, include: /ClientApp/, use: 'awesome-typescript-loader?silent=true' },
 			{
 				test: /\.tsx?$/,
 				loader: 'awesome-typescript-loader'
