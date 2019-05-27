@@ -30,6 +30,11 @@ class UsersForm extends Component {
 				summary: 'User created!',
 				detail: `User ${user.name} has been created`
 			});
+
+			setTimeout(() => {
+				location.reload();
+			}, 2000);
+
 		});
 	};
 

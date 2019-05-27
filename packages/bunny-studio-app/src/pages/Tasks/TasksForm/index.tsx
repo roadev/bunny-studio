@@ -45,14 +45,20 @@ class TasksForm extends Component<Props & RouteComponentProps, State> {
 	};
 
 	public handleSubmit = (): void => {
-		const { description, selectedUser } = this.state;
-		createTask({ description, 'user_id': selectedUser }).then(task => {
+		const { description, selectedUser, taskState } = this.state;
+		createTask(
+			{ description, 'user_id': selectedUser, state: taskState }
+			).then(task => {
 			console.log(task);
 			this.growl.show({
 				severity: 'success',
 				summary: 'Task created!',
 				detail: 'Task has been created'
 			});
+
+			setTimeout(() => {
+				location.reload();
+			}, 2000);
 		});
 	};
 

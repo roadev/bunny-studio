@@ -35,9 +35,9 @@ class TasksList extends Component<Props & RouteComponentProps, State> {
 				}
 				<section className="p-grid p-justify-center" style={{ marginTop: '2rem' }}>
 					<div className="p-col-6">
-						<ScrollPanel style={{  height: '350px' }} className="">
+						<ScrollPanel style={{  height: '400px' }} className="">
 							{tasks.map(t => (
-								<Task key={t.id} name={t.description} id={t.id} />
+								<Task key={t.id} description={t.description} id={t.id} state={t.state} />
 							))}
 						</ScrollPanel>
 					</div>

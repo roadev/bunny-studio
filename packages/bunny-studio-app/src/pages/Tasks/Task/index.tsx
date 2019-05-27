@@ -9,8 +9,9 @@ import { deleteTask } from '../../../services/tasks';
 
 interface Props {
 	id: number;
-	name: string;
 	history: History;
+	description: string;
+	state: string;
 }
 
 class Task extends Component<Props & RouteComponentProps, State> {
@@ -27,12 +28,12 @@ class Task extends Component<Props & RouteComponentProps, State> {
 	};
 
 	public render(): JSX.Element {
-		const { id, name, history } = this.props;
+		const { id, description, state } = this.props;
 		return (
 			<Fragment>
 				<Growl ref={(el) => this.growl = el} />
-				<Card title={name}>
-					{/*<Button icon="pi pi-list" style={{ marginRight: '1rem' }} onClick={() => history.push(`/users/${id}/tasks`)}/>*/}
+				<Card title={description}>
+					<p>{state}</p>
 					<Button icon="pi pi-pencil" className="p-button-warning" style={{ marginRight: '1rem' }} />
 					<Button icon="pi pi-trash" className="p-button-danger" onClick={this.handleDelete} />
 				</Card>
