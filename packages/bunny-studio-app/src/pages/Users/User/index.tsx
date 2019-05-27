@@ -32,6 +32,9 @@ class User extends Component<Props & RouteComponentProps, State> {
 				summary: 'User deleted!',
 				detail: 'User has been deleted',
 			});
+			setTimeout(() => {
+				location.reload();
+			}, 1500);
 		});
 	};
 

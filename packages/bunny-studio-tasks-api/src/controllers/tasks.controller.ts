@@ -42,7 +42,6 @@ export async function getTasks(
 ) {
 
 	const queryParams = query.user_id ? { user_id: query.user_id } : {};
-	console.log('queryParams', queryParams);
 
 	const observable = from(Task.find({ ...queryParams }));
 	observable.subscribe(

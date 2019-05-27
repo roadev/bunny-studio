@@ -24,6 +24,9 @@ class Task extends Component<Props & RouteComponentProps, State> {
 				summary: 'Task deleted!',
 				detail: 'Task has been deleted',
 			});
+			setTimeout(() => {
+				location.reload();
+			}, 1500);
 		});
 	};
 
