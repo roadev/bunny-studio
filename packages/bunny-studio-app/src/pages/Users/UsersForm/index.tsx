@@ -2,6 +2,7 @@ import React, { FormEvent, Component, Fragment } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Growl } from 'primereact/growl';
+import { isEmpty } from 'ramda';
 // import { useService } from '../../../components/utils/useService';
 import { createUser } from '../../../services/users';
 import { placeholder } from '@babel/types';
@@ -33,7 +34,7 @@ class UsersForm extends Component {
 
 			setTimeout(() => {
 				location.reload();
-			}, 2000);
+			}, 1500);
 
 		});
 	};
@@ -52,7 +53,7 @@ class UsersForm extends Component {
 						value={this.state.name}
 						onChange={(e: FormEvent<HTMLInputElement>) => this.handleChange(e.currentTarget.value)}
 					/>
-					<Button label="Create user" onClick={this.handleSubmit} />
+					<Button label="Create user" onClick={this.handleSubmit} disabled={isEmpty(this.state.name)} />
 				</div>
 			</Fragment>
 		);

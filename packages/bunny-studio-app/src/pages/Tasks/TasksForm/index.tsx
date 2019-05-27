@@ -58,7 +58,7 @@ class TasksForm extends Component<Props & RouteComponentProps, State> {
 
 			setTimeout(() => {
 				location.reload();
-			}, 2000);
+			}, 1500);
 		});
 	};
 

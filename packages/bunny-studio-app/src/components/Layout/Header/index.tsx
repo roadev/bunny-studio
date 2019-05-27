@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { History } from 'history';
 import { Menubar } from 'primereact/menubar';
+import styles from './styles';
 
 interface Items {
 	label: string;
@@ -17,7 +18,7 @@ const items = (history: History): Items[] => [
 	{
 		label: 'Users',
 		icon: 'pi pi-fw pi-users',
-		command: (): void => history.push('/users')
+		command: (): void => history.push('/users'),
 	},
 	{
 		label: 'Tasks',
@@ -28,7 +29,7 @@ const items = (history: History): Items[] => [
 
 
 const Header = ({ history }: Props): JSX.Element => (
-	<Menubar model={items(history)}/>
+	<Menubar model={items(history)} />
 );
 
 export default withRouter(Header);

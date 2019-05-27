@@ -10,7 +10,7 @@ export default function Routes(): JSX.Element {
 	return (
 		<Router>
 			<Layout>
-				<Route exact path="/" component={Home} />
+				{/*<Route exact path="/" component={Home} />*/}
 				<Route exact path="/users" component={Users} />
 				<Route exact path="/tasks" component={Tasks} />
 				<Route exact path="/users/:id/tasks" component={Tasks} />

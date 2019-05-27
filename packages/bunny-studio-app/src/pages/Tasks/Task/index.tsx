@@ -34,7 +34,7 @@ class Task extends Component<Props & RouteComponentProps, State> {
 				<Growl ref={(el) => this.growl = el} />
 				<Card title={description}>
 					<p>{state}</p>
-					<Button icon="pi pi-pencil" className="p-button-warning" style={{ marginRight: '1rem' }} />
+					{/*<Button icon="pi pi-pencil" className="p-button-warning" style={{ marginRight: '1rem' }} />*/}
 					<Button icon="pi pi-trash" className="p-button-danger" onClick={this.handleDelete} />
 				</Card>
 			</Fragment>

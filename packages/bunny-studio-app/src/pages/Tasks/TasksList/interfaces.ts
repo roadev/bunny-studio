@@ -9,6 +9,7 @@ export interface Task {
 
 export interface State {
 	tasks: Task[];
+	loading: boolean;
 }
 
 export interface Props {

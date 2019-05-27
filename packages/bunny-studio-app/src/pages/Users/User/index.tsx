@@ -4,8 +4,9 @@ import { Button } from 'primereact/button';
 import { History } from 'history';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { Growl } from 'primereact/growl';
-import { State } from '../UsersList/interfaces';
+import {Dialog} from "primereact/dialog";
 import { deleteUser } from '../../../services/users';
+
 
 interface Props {
 	id: number;
@@ -13,7 +14,15 @@ interface Props {
 	history: History;
 }
 
+interface State {
+	showEditForm: boolean;
+}
+
 class User extends Component<Props & RouteComponentProps, State> {
+	public state = {
+		showEditForm: false,
+	} ;
+
 	public growl = null;
 
 	public handleDelete = () => {
@@ -26,10 +35,27 @@ class User extends Component<Props & RouteComponentProps, State> {
 		});
 	};
 
+	public handleOpen = () => {
+		this.setState({ showEditForm: true })
+	}
+
+	public handleClose = () => {
+		this.setState({ showEditForm: false });
+	}
+
 	public render(): JSX.Element {
 		const { id, name, history } = this.props;
 		return (
 			<Fragment>
+				<Dialog
+					header="Edit user"
+					visible={this.state.showEditForm}
+					style={{ width: '50vw' }}
+					modal={true}
+					onHide={this.handleClose}
+				>
+					Content
+				</Dialog>
 				<Growl ref={(el) => this.growl = el} />
 				<Card title={name}>
 					<Button
@@ -47,7 +73,12 @@ class User extends Component<Props & RouteComponentProps, State> {
 							)
 						}
 					/>
-					<Button icon="pi pi-pencil" className="p-button-warning" style={{ marginRight: '1rem' }} />
+					{/*<Button*/}
+					{/*	icon="pi pi-pencil"*/}
+					{/*	className="p-button-warning"*/}
+					{/*	style={{ marginRight: '1rem' }}*/}
+					{/*	onClick={this.handleOpen}*/}
+					{/*/>*/}
 					<Button icon="pi pi-trash" className="p-button-danger" onClick={this.handleDelete} />
 				</Card>
 			</Fragment>
