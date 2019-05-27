@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import 'primereact/resources/themes/nova-light/theme.css';
+import '../../assets/primeflex.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import Header from './Header';

@@ -9,6 +9,7 @@
     "@types/react-dom": "16.8.4",
     "@types/react-router": "^5.0.1",
     "@types/react-router-dom": "^4.3.3",
+    "@types/rx": "^4.1.1",
     "classnames": "^2.2.6",
     "history": "^4.9.0",
     "primeicons": "^1.0.0",
@@ -16,6 +17,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
+    "rxjs": "^6.5.2",
     "typescript": "^3.4.5",
     "webpack-dev-server": "^3.4.1"
   },
